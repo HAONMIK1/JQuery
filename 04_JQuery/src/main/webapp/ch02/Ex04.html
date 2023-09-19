@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.redpink {
+	color: red;
+	background-color: pink;
+}
+
+.blueyello {
+	color: blue;
+	background-color: yello;
+}
+
+.under {
+	text-decoration: underline;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//toggle: NumLock,CapsLock,
+		$('button:first').click(function() {
+			$('#tg1 li').toggle();
+		});
+		$('button').eq(1).click(function() {
+			$('#tg1 li').remove();
+		});
+		$('#tg1 li').toggle(first, second, third);
+		$('#tg2 li').click(whenClick);
+	});
+	function first() {
+		$(this).addClass('redpink');
+	}
+	function second() {
+		$(this).removeClass('redpink');
+	}
+	function third() {
+		$(this).addClass('under');
+	}
+	function whenClick() {
+		$(this).toggleClass('blueyello');
+	}
+</script>
+</head>
+<body>
+	<h1>toggle 함수 사용하기</h1>
+	<ul id='tg1'>
+		<li>방탄소년딘</li>
+		<li>세븐틴</li>
+		<li>샤이니</li>
+	</ul>
+	<ul id='tg2'>
+		<li>르세라핌</li>
+		<li>뉴진스</li>
+		<li>아이브</li>
+	</ul>
+	<button>버튼1</button>
+	<button>버튼2</button>
+</body>
+</html>

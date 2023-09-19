@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		float : left;
+		margin: 20px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		fruits = ['apple','banana','orange','melon'];
+		cars = ['sonata','morning','genesis'];
+		
+		$(fruits).each(function(index,value) {
+			$('#fruit_list').append("<li>"+index+":"+value+"</li>");
+		});
+		
+		$(cars).each(function(index,value) {
+			$('#car_list').append("<li>"+index+":"+cars[index]+"</li>");
+		});
+		
+		$(fruits).each(function(index,value) {
+			$('#fruit_list2').prepend("<li>"+index+":"+value+"</li>");
+		});
+		
+		$(cars).each(function(index,value) {
+			$("<li>"+index+":"+cars[index]+"</li>").prependTo('#car_list2');
+		});
+		
+	});
+</script>
+</head>
+<body>
+<div>
+	<b>좋아하는 과일</b>
+	<ul id=fruit_list></ul>
+</div>
+<div>
+	<b>갖고 싶은 차</b>
+	<ul id=car_list></ul>
+</div>
+<div>
+	<b>좋아하는 과일2</b>
+	<ul id=fruit_list2></ul>
+</div>
+<div>
+	<b>갖고 싶은 차2</b>
+	<ul id=car_list2></ul>
+</div>
+</body>
+</html>

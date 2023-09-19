@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table, td{
+		border-collapse: collapse;
+	}
+	td{
+		width: 100px;
+		text-align: center;
+	}
+	.style1{
+		background-color:khaki;
+	}
+	.style2{
+		background-color:indigo;
+	}
+	.style3{
+		background-color:maroon;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		sum = 0;
+		$('td:nth-child(2)').each(function(){
+			score = +$(this).text();
+			if(score <= 30){
+				$(this).addClass('style1');
+				$(this).prev().addClass('style1');
+				$(this).next().addClass('style1');
+				//$(this).css('background','black');
+			} else if(score >= 80){
+				$(this).addClass('style2');
+				$(this).prev().addClass('style2');
+				$(this).next().addClass('style2');
+			} else{
+				$(this).addClass('style3');
+				$(this).prev().addClass('style3');
+				$(this).next().addClass('style3');
+			}
+			sum += score;
+		});
+		$('.result').append("총합:"+sum);
+		
+	});
+</script>
+</head>
+<body>
+	<table border=1>
+		<tr>
+			<th>이름</th>
+			<th>점수</th>
+			<th>성별</th>
+		</tr>
+		
+		<tr>
+			<td>웬디</td>
+			<td>70</td>
+			<td>여</td>
+		</tr>
+		
+		<tr>
+			<td>닉쿤</td>
+			<td>30</td>
+			<td>남</td>
+		</tr>
+		
+		<tr>
+			<td>슬기</td>
+			<td>20</td>
+			<td>여</td>
+		</tr>
+		
+		<tr>
+			<td>임영웅</td>
+			<td>80</td>
+			<td>남</td>
+		</tr>
+		
+		<tr>
+			<td>정동원</td>
+			<td>40</td>
+			<td>남</td>
+		</tr>
+		
+		<tr>
+			<td>윤아</td>
+			<td>90</td>
+			<td>여</td>
+		</tr>
+		
+	</table>
+	
+	<div class="result"></div>
+	
+</body>
+</html>

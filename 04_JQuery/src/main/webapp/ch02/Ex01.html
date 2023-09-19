@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	padding: 20px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				//$("img:first").attr("src","./../images/im0.jpg");	
+				$("img:eq(0)").attr("src", "./../images/im0.jpg").attr('title',
+						'귀여운가아리지').attr('alt', '대신하는 문자열').css('border',
+						'1px solid red');
+
+				$("img:eq(1)").attr({
+					'src' : "./../images/im1.jpg",
+					'title' : 'im1.jpg',
+					'alt' : 'im1.jpg',
+					'width' : '100px',
+					height : '100px'
+				}).css({
+					border : '3px solid blue',
+					background : 'yellow'
+				});
+
+				$('#btn').click(function() {
+					//alert(2);
+					$('img:eq(0)').removeAttr('title');
+					$('img:eq(0)').css('border', '5px solid blue');
+				});
+				//alert(	$('img:eq(0)').attr('alt'));
+				$('div span').append($('img:eq(0)').attr('alt'));
+
+			});
+</script>
+</head>
+<body>
+	<img />
+	<img />
+	<div>
+		<b>어트리뷰트 연습</b>
+		 <span> </span>
+	</div>
+	<br>
+	<button id="btn">어트리뷰트값 제거하기</button>
+</body>
+</html>

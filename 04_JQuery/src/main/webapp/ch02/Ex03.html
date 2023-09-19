@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 100px;
+	height: 100px;
+	
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#makeImage').click(function() {
+			$('input:checked').each(function() {
+				image = $(this).attr("id");
+				/* if(image=='Koala')
+				$("div img").attr("src",'./../images/Koala.jpg');
+				else if(image=='Penguins')
+					$("div img").attr("src",'./../images/Penguins.jpg');
+				else if(image=='Desert')
+					$("div img").attr("src",'./../images/Desert.jpg'); */
+				result +="<img src= './../images"+image+".jpg'>" ;
+			});
+				$("#area").html(result);
+		});
+	});
+
+
+</script>
+</head>
+<body>
+<p>
+	<input type="checkbox" id="Koala">코알라
+	<input type="checkbox" id="Penguins" checked>펭귄
+	<input type="checkbox" id="Desert">시막
+	</p>
+	<p>
+	<input type="button" id="makeImage" value="그림만들기">
+	</p>
+	<div id=area>
+	
+	 </div>
+</body>
+</html>

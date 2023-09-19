@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* $('header').after('<div>좋아하는 과일 : 사과</div>');
+		$('header').after('<div>좋아하는 과일 : 딸기</div>');
+		$('<div>좋아하는 과일 : 바나나</div>').insertAfter('header');
+		$('<div>좋아하는 과일 : 복숭아</div>').insertAfter('header'); */
+		
+		$('footer').before('<div>좋아하는 과일 : 사과</div>');
+		$('footer').before('<div>좋아하는 과일 : 딸기</div>');
+		$('<div>좋아하는 과일 : 바나나</div>').insertBefore('footer');
+		$('<div>좋아하는 과일 : 복숭아</div>').insertBefore('footer');
+		
+	});
+</script>
+</head>
+<body>
+	<header>
+		<h1>과일</h1>
+	</header>
+	
+	<footer>
+			<h3> <i>jQuery 공부중</i> </h3>
+	</footer>
+</body>
+</html>

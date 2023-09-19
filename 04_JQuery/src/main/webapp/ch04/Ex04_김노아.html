@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		arr= new Array("a.jpg","b.jpg","c.jpg","d.jpg","e.jpg")
+		$('#tableCreate').click(function() {
+			
+			row=$('#row').val()
+			col=$('#col').val()
+			for(i=0;i<row;i++){
+				
+				for(j=0;j<col;j++){
+					
+				}
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="row" value='2' size='5'>행
+	<input type="text" id="col" value='3' size='5'>열
+
+	<input type="button" id="tableCreate" value='테이블 생성'>
+	
+	<div id="tableArea"></div>
+</body>
+</html>

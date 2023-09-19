@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.style1 {
+	color: red;
+	background-color: pink;
+}
+
+.style2 {
+	color: green;
+	background-color: yellow;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//alert(1);
+
+		//$('tr:first-child').addClass('style1');
+		//$('tr:last-child').addClass('style2');
+		//$('tr:even').addClass('style2');
+		//$('tr:nth-child(1)').addClass('style2');
+		$('tr:eq(1)').addClass('style2');
+		//0:even odd eq  0부터시작
+		//1:nth-child	1부터시작
+	});
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+			<td>one</td>
+		</tr>
+		<tr>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+			<td>two</td>
+		</tr>
+		<tr>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+			<td>three</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>one</td>
+		</tr>
+		<tr>
+			<td>two</td>
+		</tr>
+		<tr>
+			<td>three</td>
+		</tr>
+	</table>
+
+</body>
+</html>

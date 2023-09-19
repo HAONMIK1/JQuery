@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.style1 {
+	color: black;
+	background-color: pink;
+}
+.style2 {
+	color: green;
+	background-color: yellow;
+}
+.style3 {
+	color: black;
+	background-color: yellow;
+}
+.style4 {
+	color: black;
+	background-color: pink;
+}
+.italicText {
+	font-style: italic;
+}
+.under {
+	text-decoration: underline;
+}
+
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('span:first').addClass('style3');
+		$('span:last').addClass('style4');
+		$('span:first-child').addClass('style2');
+		$('span:nth-child(2)').addClass('italicText').addClass('under');
+		$('span:last-child').addClass('style1');
+	});
+</script>
+</head>
+<body>
+	<p>
+		<span>jQuery예제1</span>
+		<span>jQuery예제2</span>
+		<span>jQuery예제3</span>
+	</p>
+	<p>
+		<span>jQuery예제4</span>
+		<span>jQuery예제5</span>
+		<span>jQuery예제6</span>
+	</p>
+	<p>
+		<span>jQuery예제7</span>
+		<span>jQuery예제8</span>
+		<span>jQuery예제9</span>
+	</p>
+</body>
+</html>

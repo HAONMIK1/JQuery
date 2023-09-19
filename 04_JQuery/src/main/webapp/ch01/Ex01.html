@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.sportlight {
+	background: #ff0;
+}
+
+.redText {
+	color: #f00;
+}
+
+.largeText {
+	font-size: 30pt;
+}
+
+.italicText {
+	font-style: italic;
+}
+
+.under {
+	text-decoration: underline;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//alert(1);
+		$('span').addClass('sportlight');//태크선택자
+		$('div').addClass('redText');
+		$('#simple1').addClass('largeText');//id선택자
+		$('.simple3').addClass('italicText').addClass('under');
+	});
+</script>
+</head>
+<body>
+
+	<span id="simple1">simple</span>
+	<div class="simple1">jQuery</div>
+	<span id="simple2">basic</span>
+	<div class="simple3">example</div>
+
+	<hr>
+</body>
+</html>
