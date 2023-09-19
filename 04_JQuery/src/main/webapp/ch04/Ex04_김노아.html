@@ -2,21 +2,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Ex04_김노아</title>
+<style type="text/css">
+.size{
+	width: 100px;
+	height: 100px;
+}
+</style>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
 		arr= new Array("a.jpg","b.jpg","c.jpg","d.jpg","e.jpg")
 		$('#tableCreate').click(function() {
-			
 			row=$('#row').val()
 			col=$('#col').val()
+			
+			$('#tableArea').append("<table border= 1 >");
 			for(i=0;i<row;i++){
-				
+				$('#tableArea').append("<tr>")
 				for(j=0;j<col;j++){
-					
+					$('#tableArea').append("<td>"+"<img src='./../images/"+arr[j%5]+" width= 200 height= 200'></tr>");
 				}
+				$('#tableArea').append("</tr>")
 			}
+			$('#tableArea').append("</table>");
 		});
 	});
 </script>
@@ -27,6 +36,9 @@
 
 	<input type="button" id="tableCreate" value='테이블 생성'>
 	
-	<div id="tableArea"></div>
+	<div id="tableArea">
+	<table border=""></table>
+	<img  src="" width="" height="">
+	</div>
 </body>
 </html>
