@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex03_김노아</title>
+<style type="text/css">
+table {
+	border: 1px;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		arr = new Array("a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg")
+		$('#tableCreate')
+				.click(
+						
+						function() {
+							$('#tableArea').empty();
+							row = $('#row').val();
+							col = $('#col').val();
+							if(isNaN(row)||isNaN(col)){
+								alert("숫자를 입력하세요");
+								return;
+							}
+
+							$('#tableArea').append("<table >");
+							for (i = 0; i < row; i++) {
+								$('#tableArea').append("<tr>")
+								for (j = 0; j < col; j++) {
+									$('#tableArea')
+											.append(
+													"<td>"
+															+ "<img src='./../images/"
+															+ arr[j % 5] /* [parseInt(Math.random()*5)] */
+															+"'></tr>");
+								}
+								$('#tableArea').append("</tr>")
+							}
+							$('#tableArea').append("</table>");
+						});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="row" value='2' size='5'>행
+	<input type="text" id="col" value='3' size='5'>열
+
+	<input type="button" id="tableCreate" value='테이블 생성'>
+
+	<div id="tableArea">
+		<table></table>
+	
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	span{
+		display: none;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button:eq(0)").click(function(){
+			$('span:first').show();
+		});
+		
+		$("button:eq(1)").click(function(){
+			$('span:first').hide();
+		});
+		
+		$("button:eq(2)").click(function(){
+			$('span:eq(1)').show(5000,function(){
+				$(this).css('background','yellow');
+			}); 
+		});
+		
+		$("button:eq(3)").click(function(){
+			$('span:eq(1)').hide('slow',function(){
+				alert(1);
+			}); 
+		});
+		
+		$("button:last").click(function(){
+			$('span:last').toggle();
+		});
+		
+	});//ready
+</script>
+</head>
+<body>
+	<button>Show</button> <button>Hide</button>
+	<span>안녕하세요</span>
+	<br><br>
+	
+	<button>Show slow</button> <button>Hide slow</button>
+	<span>반갑습니다.</span>
+	<br><br>
+	
+	<button>Show/Hide</button>
+	<span>또 만나요~</span>
+	<br><br>
+</body>
+</html>
+
+
+

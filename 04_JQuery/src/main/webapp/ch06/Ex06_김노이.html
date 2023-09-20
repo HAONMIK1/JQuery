@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I</title>
+<style type="text/css">
+table {
+	width: 500px;
+	height: 300px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('input[name="id"]').focus();
+	});
+	function check() {
+	 	str = "입력한 항목은";
+	 	if ($('input[name="id"]').val() == "") {
+			alert("아이디 누락");
+			$('input[name="id"]').focus();
+			return false;
+		}
+		if ($('input[name="pw"]').val() == "") {
+			alert("비번 누락");
+			$('input[name="pw"]').focus();
+			return false;
+		}
+		if ($('input[name="repw"]').val() == "") {
+			alert("비번확인 누락");
+			$('input[name="repw"]').focus();
+			return false;
+		}
+		if ($('input[name="repw"]').val() != $('input[name="pw"]').val()) {
+			alert("비번확인 다름");
+			$('input[name="repw"]').select();
+			return false;
+		}
+		if ($('input[name="name"]').val() == "") {
+			alert("이름 누락");
+			$('input[name="name"]').focus();
+			return false;
+		}
+		str += "아이디: " + $('input[name="id"]').val() + "\n" + "비밀번호: "
+				+ $('input[name="pw"]').val() + "\n" + "이름: "
+				+ $('input[name="name"]').val() + "\n";
+
+		if ($('select[name="tel"]').val() == "선택") {
+			alert("전화번호를 선택하세요");
+			$('select[name="tel"]').focus();
+			return false;
+		}
+		if ($('input[name="tel1"]').val() == "") {
+			alert("전화번호를 누락");
+			$('input[name="tel1"]').focus();
+			return false;
+		}
+		//if($(select option:selected').val()==""){
+		if ($('input[name="tel2"]').val() == "") {
+			alert("전화번호를 누락");
+			$('input[name="tel2"]').focus();
+			return false;
+		}
+		if (isNaN($('input[name="tel1"]').val())) {
+			alert("전화번호를 숫자로 입력하세요");
+			$('input[name="tel1"]').select();
+			return false;
+		}
+		if (isNaN($('input[name="tel2"]').val())) {
+			alert("전화번호를 숫자로 입력하세요");
+			$('input[name="tel2"]').select();
+			return false;
+		}
+		str += "전화번호" + $('select[name="tel"]').val() + "-"
+				+ $('input[name="tel1"]').val() + "-"
+				+ $('input[name="tel2"]').val();
+		
+		if ($('input[name="addr1"]').val() == "") {
+			alert("주소 누락");
+			$('input[name="addr1"]').focus();
+			return false;
+		}
+		if ($('input[name="addr2"]').val() == "") {
+			alert("세부주소 누락");
+			$('input[name="addr2"]').focus();
+			return false;
+		}
+		if ($('input[name="email"]').val() == "") {
+			alert("이메일 누락");
+			$('input[name="email"]').focus();
+			return false;
+		}
+		if ($('input[name="email"]').val().indexOf("@") == -1) {
+			alert("이메일 형식이 아닙니다");
+			$('input[name="email"]').focus();
+			return false;
+		}
+		str += "주소: " + $('input[name="addr1"]').val() + "\n" + "세부주소: "
+		+ $('input[name="addr2"]').val() + "\n" + "이메일 : "
+		+ $('input[name="email"]').val() + "\n";
+		
+		
+		if ($('input[name="sing"]:checked').length == 0) {
+			alert("좋아하는 가수 누락");
+			return false;
+			}
+		 
+		 singer="";
+		 
+		$('input[name="sing"]:checked').each(function() {
+			singer +=$(this).val()+" ";	
+		});
+		str += "좋아하는 가수는 "+ singer;	
+			
+		if ($('input[name="gender"]:checked').length == 0) {
+			alert("성별 누락");
+			return false;
+			}
+	
+		if(!$('input[name="gender"]:checked').is(":checked")){
+			alert("성별누락")
+			return false;
+		}
+		
+		str+="성별: "+$('input[name="gender"]:checked').val();
+		
+		if ($('textarea[name="read"]').val() == "") {
+			alert("글쓰기 누락");
+			$('textarea[name="read"]').focus();
+			return false;
+		}
+		str+=$('textarea[name="read"]').val() ;
+		alert(str);
+	}
+</script>
+</head>
+<body>
+	<form name="myform" action="result.jsp">
+		<table border="1">
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id" size="7"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<td>비밀번호 확인</td>
+				<td><input type="password" name="repw"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name" size="5"></td>
+			</tr>
+			<tr>
+				<td>전화번호</td>
+				<td><select name="tel">
+						<option>선택</option>
+						<option>02</option>
+						<option>031</option>
+						<option>051</option>
+						<option>043</option>
+						<option>063</option>
+				</select> - <input type="text" name="tel1" size="5"> - <input
+					type="text" name="tel2" size="5"></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name="addr1"></td>
+			</tr>
+			<tr>
+				<td>세부주소</td>
+				<td><input type="text" name="addr2"></td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>좋아하느 가수</td>
+				<td><input type="checkbox" name="sing" value="아이브">아이브   
+				<input type="checkbox" name="sing" value="뉴진스">뉴진스 
+				<input type="checkbox" name="sing" value="르세라핌">르세라핌 
+				<input type="checkbox" name="sing" value="에스파">에스파
+				</td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><input type="radio" name="gender" value="남">남 <input
+					type="radio" name="gender" value="여">여</td>
+			</tr>
+			<tr>
+				<td>글쓰기</td>
+				<td><textarea rows="10" cols="30" name="read"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="전송"
+					onclick=" return check()"> <input type="reset" value="초기화">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+<!-- 아디 비번 비번 확인 이름 누락 체크
+비번과 비번 확인은 같아야한다
+다르면 비번확인 다시하세요
+전화번호는 숫자로 입력
+가수 최소 하나선택 실제로 2개선택
+성별도 선택
+글쓰기 반드시 입력
+전송합시다 클릭하면 
+입력 / 선택 모든것을 alert에 띄우고 액션으로 넘어가기 -->

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex0</title>
+<style type="text/css">
+#left_side {
+	float: left;
+	margin-right: 50px;
+}
+
+div {
+	margin-bottom: 20px;
+}
+#imgsrc{
+	width: 300px;
+	height: 300px;
+	position: fixed;
+	left: 150px;
+}
+.small{
+	width: 90px;
+	height: 90px;
+}
+#right_side {
+		display: none;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('img.small').mouseover(function() {
+			$(this).fadeTo('slow',0.3);
+			$('img.imgsrc').attr('src',"$(this).attr('src')");
+		});
+		$('img.small').mouseout(function() {
+			$(this).fadeTo('slow',1);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="left_side">
+		<div>
+			<img class="small" src="../images/a.jpg">
+		</div>
+		<div>
+			<img class="small" id ='first' src="../images/b.jpg">
+		</div>
+		<div>
+			<img class="small" src="../images/c.jpg">
+		</div>
+	</div>
+	<div id="right_side">
+		<img id="imgsrc" >
+	</div>
+</body>
+</html>
+<!-- 
+작은 이미지에 손대면 흐릿해지면서  서서히 div에 손댄 그림이 보이게 되고 손때서 서서히 사라진다
+fadeIn Out To관련
+mouseover
+mouseout
+ -->

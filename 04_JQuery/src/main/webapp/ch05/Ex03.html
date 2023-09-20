@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert  </title>
+<style type="text/css">
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("img").bind('click mouseover mouseout' , function() {
+			//$(this)
+			target = $(event.target);
+			w = target.width()
+			target.width(w+50);
+			target.height(target.height()+50);
+			if(target.height()==300){
+				$('img').unbind('click');
+			}
+			
+		});//bind
+	});//ready
+</script>
+</head>
+<body>
+	<img src="../images/b.jpg">
+</body>
+</html>

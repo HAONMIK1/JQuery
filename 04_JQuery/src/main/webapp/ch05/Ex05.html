@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+<style type="text/css">
+img {
+	width: 80px;
+	height: 80px;
+	margin-left: 50px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#sel').change(function() {//콜백함수
+			/* 선택한 항목을 value 값 가져와서 
+			img의 넣기 */
+			
+			$('img').attr("src","../images/"+$(this).val())
+		}).change();
+	});
+	
+</script>
+</head>
+<body>
+	<form name="myform">
+		<table>
+			<tr>
+				<td><select id="sel">
+						<option value="strawberry.gif">딸기
+						<option value="banana.gif">바나나
+						<option value="apple.gif" selected="selected">사과
+				</select></td>
+				<td><img id="img"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

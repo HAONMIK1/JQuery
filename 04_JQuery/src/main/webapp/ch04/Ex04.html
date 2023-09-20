@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btnEmpty').click(function() {
+			$('div').empty();//div 공간을 지움 그래서 append 사용해도 추가됌
+			$('div').append("<b>h1</b>")
+		});
+		$('#btnRemove').click(function() {
+			$('div').remove();//div 자체가 사라지게함 remove div가 없어서 추가 안됌
+			$('div').append("<b>h2</b>")
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>JQuery</p>
+		<p>공부중</p>
+	</div>
+	<input type="button" id="btnEmpty" value="삭제1">
+	<input type="button" id="btnRemove" value="삭제2">
+
+</body>
+</html>
