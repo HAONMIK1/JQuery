@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+			url : "item.json",
+			dataType : "json",
+			success : function(data) {
+				$('#fruitTable').append(
+						"<tr>" + "<th>id</th>" + "<th>name</th>"
+								+ "<th>price</th>" + "<th>description</th>"
+								+ "</tr>");
+
+				$.each(data, function() {
+					$('#fruitTable').append(
+							"<tr>" 	+ "<td>" + this.id + "</td>" 
+									+ "<td>" + this.name + "</td>" 
+									+ "<td>" + this.price+ 
+									"</td>" + "<td>" + this.description
+									+ "</td>" + "</tr>");
+				});
+			}
+
+		});//ajax
+
+	});//ready
+</script>
+</head>
+<body>
+	<h3>과일의 특성 조사 자료</h3>
+	<table id="fruitTable" border="1">
+
+	</table>
+</body>
+</html>

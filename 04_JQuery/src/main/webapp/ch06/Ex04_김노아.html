@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ex0</title>
+<title>Ex04_김노아</title>
 <style type="text/css">
 #left_side {
 	float: left;
@@ -22,19 +22,23 @@ div {
 	width: 90px;
 	height: 90px;
 }
+/* 
 #right_side {
 		display: none;
 	}
+	 */
 </style>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$('img.small').mouseover(function() {
 			$(this).fadeTo('slow',0.3);
-			$('img.imgsrc').attr('src',"$(this).attr('src')");
+			$('#right_side #imgsrc').attr("src", $(this).attr("src"));
+			$("#imgsrc").fadeIn(3000);
 		});
 		$('img.small').mouseout(function() {
 			$(this).fadeTo('slow',1);
+			$("#imgsrc").hide();
 		});
 	});
 </script>
@@ -52,7 +56,7 @@ div {
 		</div>
 	</div>
 	<div id="right_side">
-		<img id="imgsrc" >
+		<img id="imgsrc">
 	</div>
 </body>
 </html>

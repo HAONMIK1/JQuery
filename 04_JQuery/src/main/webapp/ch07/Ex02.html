@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var man = {
+			name : 'hong',
+			age : 50,
+			birthdate : new Date(1990, 5, 1),
+			jumsu : {
+				kor : 50,
+				eng : 70,
+				math : 100
+			}
+		};
+		/* jumsu = new Object();
+		jumsu.kor = 50;
+		jumsu.eng =70; */
+
+		var woman = {
+			name : 'choi',
+			age : 20,
+			birthdate : new Date(2010, 11, 21),
+			jumsu : {
+				kor : 20,
+				eng : 90,
+				math : 100
+			}
+		};
+		console.log(man.age);
+		console.log(man.birthdate.getMonth() + "월" + man.birthdate.getDay()
+				+ "일");
+		console.log(man.jumsu.eng);
+
+		console.log(woman.age);
+		console.log(woman.jumsu.kor);
+
+		person = new Array({
+			name : 'hong',
+			age : 50,
+			birthdate : new Date(1990, 5, 1),
+			jumsu : {
+				kor : 50,
+				eng : 70,
+				math : 100
+			}
+		},
+		{
+			name : 'choi',
+			age : 20,
+			birthdate : new Date(2010, 11, 21),
+			jumsu : {
+				kor : 20,
+				eng : 90,
+				math : 100
+			}
+		}
+
+		);//person 
+		
+		person1 = new Array(man,woman);
+		person2 = [man,woman];
+		console.log(person[0].birthdate.toLocaleString());
+		console.log(person1[0].jumsu.eng);
+		console.log(person1[1].age);
+		
+
+	});//ready
+</script>
+</head>
+<body>
+
+</body>
+</html>

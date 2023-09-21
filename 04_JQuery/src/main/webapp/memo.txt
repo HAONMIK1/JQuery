@@ -15,8 +15,8 @@ prev
 prevAll
 siblings
 filter
-find
-children
+find 자손에
+children 자식에
 parent
 parents
 toggle

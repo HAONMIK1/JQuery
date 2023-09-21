@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+	<person>
+		<no>1</no>
+		<name>강</name>
+		<age>20</age>
+		<addr>서울</addr>
+	</person>
+
+	<person>
+		<no>2</no>
+		<name>김</name>
+		<age>30</age>
+		<addr>일산</addr>
+	</person>
+</persons>

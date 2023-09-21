@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insertr </title>
+<style type="text/css">
+	div {
+	float: left;
+	margin: 100px;
+	height: 100px;
+	margin: 50px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+	$('#menu1').click(function() {
+		$.ajax({
+			url:"menu.html",//요청url
+			dataType:'html',//서버에서 결과를 보내는 반환타입
+			success : function(data) {
+				$('#message1').html("<br>성공"+data);
+			},
+			error : function(data) {
+				alert("실패:" + data)
+			}
+		});
+	});
+	$('#menu2').click(function() {
+		$.ajax({
+				url: 'menu.html',
+				datatype: 'html',
+				success: function(data) {
+					$('#message2'),html($(data).find('li'));
+				},
+				error: alert("실패")
+		});
+	});
+	
+	
+	
+	});//ready
+</script>
+</head>
+<body>
+	<div>
+		<a href="#" id=menu1>메뉴보기1</a>
+		<span id="message1"></span>
+	</div>
+	
+	<div>
+		<a href="#" id ="menu2">메뉴보기2</a>
+		<span id = "message2"></span>
+	</div>
+</body>
+</html>
